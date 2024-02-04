@@ -1,6 +1,6 @@
 # go-tushare-sdk
 
-```go
+```
 import (
     "github.com/yushikuann/go-tushare-sdk/client"
 )
