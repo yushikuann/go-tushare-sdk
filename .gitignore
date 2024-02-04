@@ -1,0 +1,8 @@
+./vendor
+./vendor/*
+./.idea
+./.idea/*
+vendor
+.idea
+vendor/*
+.idea/*
