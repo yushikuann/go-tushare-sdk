@@ -165,3 +165,19 @@ func (api *TuShare) Suspend(params map[string]string, fields []string) (*APIResp
 
 	return api.postData(body)
 }
+
+// StkMins 分钟数据
+// params: ts_code / start_date / end_date / freq / offset / limit
+// params example: 601965.SH / 2024-05-27 09:30:00 / 2024-05-27 15:00:00 / 1min / 0 / 10
+// return: code股票代码 / tradetime交易时间 / open开盘价 / close收盘价 / high最高价 / low最低价 / vol成交量 / amount成交额(元)
+// return example: [[601965.SH 2024-05-28 15:00:00 18.69 18.69 18.69 18.69 40700 760683]]
+func (api *TuShare) StkMins(params map[string]string, fields []string) (*APIResponse, error) {
+	body := map[string]interface{}{
+		"api_name": "stk_mins",
+		"token":    api.token,
+		"params":   params,
+		"fields":   fields,
+	}
+
+	return api.postData(body)
+}
