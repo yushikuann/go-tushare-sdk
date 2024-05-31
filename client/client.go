@@ -3,6 +3,7 @@ package client
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 )
@@ -44,7 +45,7 @@ func (api *TuShare) doRequest(req *http.Request) (*APIResponse, error) {
 		return nil, err
 	}
 	if resp.StatusCode != http.StatusOK {
-		return nil, ERR_NETWORK
+		return nil, fmt.Errorf("net work error: %d", resp.StatusCode)
 	}
 	defer resp.Body.Close()
 
