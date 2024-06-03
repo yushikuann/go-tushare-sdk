@@ -1,6 +1,6 @@
 package client
 
-// PledgeStat 获取股权质押统计数据
+// MoneyFlow 获取股权质押统计数据
 func (api *TuShare) MoneyFlow(params map[string]string, fields []string) (*APIResponse, error) {
 	// Check param
 	_, hasTradeDate := params["trade_date"]

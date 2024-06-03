@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// Daily 获取股票行情数据, 日线行情
+// Daily 获取股票行情数据, 日线
 func (api *TuShare) Daily(params map[string]string, fields []string) (*APIResponse, error) {
 	// Check params
 	_, hasTsCode := params["ts_code"]
@@ -29,7 +29,7 @@ func (api *TuShare) Daily(params map[string]string, fields []string) (*APIRespon
 	return api.postData(body)
 }
 
-// Weekly 获取股票行情数据, 周线行情
+// Weekly 获取股票行情数据, 周线
 func (api *TuShare) Weekly(params map[string]string, fields []string) (*APIResponse, error) {
 	// Check params
 	_, hasTsCode := params["ts_code"]
@@ -166,7 +166,7 @@ func (api *TuShare) Suspend(params map[string]string, fields []string) (*APIResp
 	return api.postData(body)
 }
 
-// StkMins 分钟数据
+// StkMins 股票行情数据, 分钟
 // params: ts_code / start_date / end_date / freq / offset / limit
 // params example: 601965.SH / 2024-05-27 09:30:00 / 2024-05-27 15:00:00 / 1min / 0 / 10
 // return: code股票代码 / tradetime交易时间 / open开盘价 / close收盘价 / high最高价 / low最低价 / vol成交量 / amount成交额(元)

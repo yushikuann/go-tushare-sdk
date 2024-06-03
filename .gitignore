@@ -6,3 +6,4 @@ vendor
 .idea
 vendor/*
 .idea/*
+env*.json
